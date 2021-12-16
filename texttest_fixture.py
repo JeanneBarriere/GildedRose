@@ -31,5 +31,6 @@ def texttest():
         for item in items:
             result = result+str(item)
         GildedRose(items).update_quality()
+        GildedRose(items).update_quality_part_2()
 
     return result

@@ -16,4 +16,11 @@ Quatrieme etape : decomposer les choses simples en petites méthodes
  - Remplacement des augmentations et diminution dans la méthode update_quality par les méthodes créées précédements
  - EXECUTION DES TESTS : OK
 Cinquième étape : division de l'update de qualité en deux fonction (vision plus clair du code)
+Sixième étape : ajout du test "if quality < 50" dans la méthode increase_quality afin de enlever tous les  "if quality < 50" 
+Septième étape : ajout du test "if quality > 0" dans la méthode decrease_quality afin de enlever tous les "if quality > 0" 
+
+NOTA : Après avoir relu le but, nous nous somme rendu compte que notre filet de test n'est pas assez important. Il faut qu'on ajoute des tests pour 10 jours, 5 jours
+
+Huitième étape : ajout de plusieurs tests unitaire à notre filet.
+
 

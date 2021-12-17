@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item
+from gilded_rose import Item, Product
 
 
 class GildedRoseTest(unittest.TestCase):
@@ -14,16 +14,6 @@ class GildedRoseTest(unittest.TestCase):
         item = Item("Item", 0, 0)
         item.decrease_quality()
         self.assertEquals(0, item.quality)
-
-    def test_increase_quality_max(self):
-        item = Item("Bubble Gum", 2, 50)
-        item.increase_quality()
-        self.assertEquals(50, item.quality)
-
-    def test_increase_quality(self):
-        item = Item("Bubble Gum", 2, 45)
-        item.increase_quality()
-        self.assertEquals(46, item.quality)
 
     def test_decrease_sellIn(self):
         item = Item("Item", 3, 50)

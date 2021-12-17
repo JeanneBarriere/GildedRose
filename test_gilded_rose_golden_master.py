@@ -1,119 +1,112 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from gilded_rose import Item, GildedRose
+from gilded_rose import AgedBrie, Backstage, Item, GildedRose, Product, Sulfura
 from texttest_fixture import golden_test_two_days
 from texttest_fixture import golden_test_ten_days
 
 
 class GildedRoseTest(unittest.TestCase):
     def test_foo(self):
-        items = [Item("foo", 0, 0)]
+        items = [Product("foo", 0, 0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
         self.assertEquals("foo", items[0].name)
 
+        tom = Cat("Tom", 3, 20)
+        print("Call move() method")
+        tom.move()
+        print("\n")
+        print("Call showInfo() method")
+
+        tom.showInfo()
+
     def test_item_more_than_zero_days(self):
-        items = [Item("item", 3, 12)]
+        items = [Product("item", 3, 12)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(11, items[0].quality)
         self.assertEquals(2, items[0].sell_in)
 
     def test_item_equal_zero_days(self):
-        items = [Item("item", 0, 12)]
+        items = [Product("item", 0, 12)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(10, items[0].quality)
         self.assertEquals(-1, items[0].sell_in)
 
     def test_item_less_than_zero_days(self):
-        items = [Item("item", -1, 12)]
+        items = [Product("item", -1, 12)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(10, items[0].quality)
         self.assertEquals(-2, items[0].sell_in)
 
     def test_Backstage_less_than_five_days(self):
-        items = [Item("Backstage passes to a TAFKAL80ETC concert", 2, 0)]
+        items = [Backstage(2, 0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(3, items[0].quality)
         self.assertEquals(1, items[0].sell_in)
 
     def test_Backstage_less_than_ten_days(self):
-        items = [Item("Backstage passes to a TAFKAL80ETC concert", 9, 0)]
+        items = [Backstage(9, 0)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(2, items[0].quality)
         self.assertEquals(8, items[0].sell_in)
 
     def test_Backstage_less_than_zero_days(self):
-        items = [Item("Backstage passes to a TAFKAL80ETC concert", 0, 12)]
+        items = [Backstage(0, 12)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(0, items[0].quality)
         self.assertEquals(-1, items[0].sell_in)
 
     def test_Sulfura_positive_sell_in(self):
-        items = [Item("Sulfuras, Hand of Ragnaros", 3, 80)]
+        items = [Sulfura()]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(80, items[0].quality)
-        self.assertEquals(3, items[0].sell_in)
 
     def test_Sulfura_equals_zero(self):
-        items = [Item("Sulfuras, Hand of Ragnaros", 0, 80)]
+        items = [Sulfura()]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(80, items[0].quality)
-        self.assertEquals(0, items[0].sell_in)
 
     def test_Sulfura_negative_sell_in(self):
-        items = [Item("Sulfuras, Hand of Ragnaros", -10, 80)]
+        items = [Sulfura()]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(80, items[0].quality)
-        self.assertEquals(-10, items[0].sell_in)
 
     def test_Aged_Brie_increase(self):
-        items = [Item("Aged Brie", 2, 43)]
+        items = [AgedBrie(2, 43)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(44, items[0].quality)
         self.assertEquals(1, items[0].sell_in)
 
     def test_Aged_Brie_sell_in_negative(self):
-        items = [Item("Aged Brie", -3, 43)]
+        items = [AgedBrie(-3, 43)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(45, items[0].quality)
         self.assertEquals(-4, items[0].sell_in)
 
     def test_Aged_Brie_sell_in_equals_zero(self):
-        items = [Item("Aged Brie", 0, 43)]
+        items = [AgedBrie(0, 43)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
+
         self.assertEquals(45, items[0].quality)
         self.assertEquals(-1, items[0].sell_in)
 
     def test_Aged_Brie_cant_increase(self):
-        items = [Item("Aged Brie", 2, 50)]
+        items = [AgedBrie(2, 50)]
         gilded_rose = GildedRose(items)
         gilded_rose.update_quality()
-        gilded_rose.update_quality_part_2()
         self.assertEquals(50, items[0].quality)
         self.assertEquals(1, items[0].sell_in)
 

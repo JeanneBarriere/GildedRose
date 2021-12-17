@@ -26,4 +26,4 @@ Huitième étape : ajout de plusieurs tests à notre filet.
 Neuvième étape : ajout d'autre tests à notre filet.
 Dixième étape : ajout de tests unitaires pour nos méthodes de modifications de sell_in et quality
 
-Onzième étape : heritage d'item en différents objets et partages de l'update dans chacune de ces sous-classes. Modifications des tests filets en conséquences (sauf tests basés sur texttest_fixture.py)
+Onzième étape : heritage d'item en différents objets et partages de l'update dans chacune de ces sous-classes. Modifications des tests filets en conséquences (sauf tests basés sur texttest_fixture.py) - Test OK

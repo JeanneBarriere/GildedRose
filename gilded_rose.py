@@ -34,7 +34,7 @@ class GildedRose(object):
                     item.increase_quality()
 
 
-class Item:
+class Item():
     def __init__(self, name, sell_in, quality):
         self.name = name
         self.sell_in = sell_in
@@ -53,6 +53,3 @@ class Item:
 
     def decrease_sell_in(self):
         self.sell_in = self.sell_in-1
-
-    def increase_sell_in(self):
-        self.sell_in = self.sell_in+1

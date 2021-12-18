@@ -29,3 +29,5 @@ Dixième étape : ajout de tests unitaires pour nos méthodes de modifications d
 Onzième étape : heritage d'item en différents objets et partages de l'update dans chacune de ces sous-classes. Modifications des tests filets en conséquences (sauf tests basés sur texttest_fixture.py) - Test OK
 
 Douxieme étape : nous nous sommes rendu que nous avions modifié la class Item. Pour cela nous afin refactorisé les classes en consequence.
+
+Treizieme étape : ajout d'une factory et débugage de nos modifications à l'aide des tests filets

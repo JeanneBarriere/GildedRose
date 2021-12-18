@@ -8,21 +8,19 @@ def golden_test_two_days():
 
     result = ""
     result = result + "OMGHAI!"
+    item = ItemFactory()
     items = [
-        Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
-        Item(name="Aged Brie", sell_in=2, quality=0),
-        Item(name="Elixir of the Mongoose", sell_in=5, quality=7),
-        Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
-        Item(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
-        Item(name="Backstage passes to a TAFKAL80ETC concert",
-             sell_in=15, quality=20),
-        Item(name="Backstage passes to a TAFKAL80ETC concert",
-             sell_in=10, quality=49),
-        Item(name="Backstage passes to a TAFKAL80ETC concert",
-             sell_in=5, quality=49),
-        Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
-    ]
-
+             item.create(name="+5 Dexterity Vest", sell_in=10, quality=20),
+             item.create(name="Aged Brie", sell_in=2, quality=0),
+             item.create(name="Elixir of the Mongoose", sell_in=5, quality=7),
+             item.create(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
+             item.create(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
+             item.create(name="Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20),
+             item.create(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49),
+             item.create(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=49),
+             item.create(name="Conjured Mana Cake", sell_in=3, quality=6), 
+            ]
+    
     days = 2
     for day in range(days):
 
@@ -31,7 +29,6 @@ def golden_test_two_days():
         for item in items:
             result = result+str(item)
         GildedRose(items).update_quality()
-        GildedRose(items).update_quality_part_2()
 
     return result
 
@@ -39,19 +36,20 @@ def golden_test_ten_days():
 
     result = ""
     result = result + "OMGHAI!"
+    item = ItemFactory()
     items = [
-        Item(name="+5 Dexterity Vest", sell_in=10, quality=20),
-        Item(name="Aged Brie", sell_in=2, quality=0),
-        Item(name="Elixir of the Mongoose", sell_in=5, quality=7),
-        Item(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
-        Item(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
-        Item(name="Backstage passes to a TAFKAL80ETC concert",
+        item.create(name="+5 Dexterity Vest", sell_in=10, quality=20),
+        item.create(name="Aged Brie", sell_in=2, quality=0),
+        item.create(name="Elixir of the Mongoose", sell_in=5, quality=7),
+        item.create(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80),
+        item.create(name="Sulfuras, Hand of Ragnaros", sell_in=-1, quality=80),
+        item.create(name="Backstage passes to a TAFKAL80ETC concert",
              sell_in=15, quality=20),
-        Item(name="Backstage passes to a TAFKAL80ETC concert",
+        item.create(name="Backstage passes to a TAFKAL80ETC concert",
              sell_in=10, quality=49),
-        Item(name="Backstage passes to a TAFKAL80ETC concert",
+        item.create(name="Backstage passes to a TAFKAL80ETC concert",
              sell_in=5, quality=49),
-        Item(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
+        item.create(name="Conjured Mana Cake", sell_in=3, quality=6),  # <-- :O
     ]
 
     days = 10
@@ -62,6 +60,5 @@ def golden_test_ten_days():
         for item in items:
             result = result+str(item)
         GildedRose(items).update_quality()
-        GildedRose(items).update_quality_part_2()
 
     return result

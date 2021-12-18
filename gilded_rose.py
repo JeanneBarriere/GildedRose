@@ -42,16 +42,6 @@ class Backstage (Item):
         if self.quality > 50 :
             self.quality = 50
 
-    def increase_quality_under_eleven(self):
-        self.quality = self.quality + 2
-        if self.quality > 50 :
-            self.quality = 50
-
-    def increase_quality_under_six(self):
-        self.quality = self.quality + 3
-        if self.quality > 50 :
-            self.quality = 50
-
     def decrease_quality_equals_zero(self):
         self.quality = 0
 

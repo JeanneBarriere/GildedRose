@@ -31,3 +31,7 @@ Onzième étape : heritage d'item en différents objets et partages de l'update 
 Douxieme étape : nous nous sommes rendu que nous avions modifié la class Item. Pour cela nous afin refactorisé les classes en consequence.
 
 Treizieme étape : ajout d'une factory et débugage de nos modifications à l'aide des tests filets
+
+Quinzieme étape : ajout de tests unitaires. 
+
+Quatorzieme étape : ajout du produit Conjured

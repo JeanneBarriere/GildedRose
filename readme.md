@@ -26,12 +26,12 @@ Huitième étape : ajout de plusieurs tests à notre filet.
 Neuvième étape : ajout d'autre tests à notre filet.
 Dixième étape : ajout de tests unitaires pour nos méthodes de modifications de sell_in et quality
 
-Onzième étape : heritage d'item en différents objets et partages de l'update dans chacune de ces sous-classes. Modifications des tests filets en conséquences (sauf tests basés sur texttest_fixture.py) - Test OK
+Onzième étape : heritage d'item en différents objets et partage de l'update dans chacune de ces sous-classes. Modification des tests filets en conséquence (sauf tests basés sur texttest_fixture.py) - Test OK
 
 Douxieme étape : nous nous sommes rendu que nous avions modifié la class Item. Pour cela nous afin refactorisé les classes en consequence.
 
 Treizieme étape : ajout d'une factory et débugage de nos modifications à l'aide des tests filets
 
-Quinzieme étape : ajout de tests unitaires. 
+Quatorzieme étape : ajout de tests unitaires. 
 
-Quatorzieme étape : ajout du produit Conjured
+Quinziem étape : ajout du produit Conjured pour cela on implémente la classe, on ajoute un test permettant de verifier le bon comportement de la méthode update_quality. Puis on modifie le test filet pour y intégrer ce nouvel élément.

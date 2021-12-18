@@ -47,6 +47,7 @@ class GildedRoseTest(unittest.TestCase):
         item = AgedBrie(-1, 12)
         item.increase_quality()
         self.assertEquals(14, item.quality)
+
     
 
 

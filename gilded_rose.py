@@ -12,6 +12,7 @@ class ItemFactory(object) :
         if name == "Sulfuras, Hand of Ragnaros": return Sulfuras(sell_in)
         if name == "Backstage passes to a TAFKAL80ETC concert": return Backstage(sell_in, quality)
         if name == "Aged Brie": return AgedBrie(sell_in, quality)
+        if name == "Conjured Mana Cake": return Conjured(sell_in, quality)
         else:
             return Item(name, sell_in, quality)
 
@@ -70,8 +71,7 @@ class Sulfuras (Item):
 
 class AgedBrie (Item):
     def __init__(self, sell_in, quality):
-        super().__init__("AgedBrie", sell_in, quality)
-        self.name = "Aged Brie"
+        super().__init__("Aged Brie", sell_in, quality)
 
     def decrease_sell_in(self):
         self.sell_in = self.sell_in-1
@@ -84,3 +84,12 @@ class AgedBrie (Item):
     def update_quality(self):
         self.decrease_sell_in()
         self.increase_quality()
+
+class Conjured (Item):
+    def __init__(self, sell_in, quality):
+        super().__init__("Conjured Mana Cake", sell_in, quality)
+
+    def update_quality(self):
+        self.sell_in = self.sell_in-1
+        self.quality = (self.quality, self.quality-2)[self.quality > 0]
+        self.quality = (self.quality, self.quality-2)[self.sell_in < 0 and self.quality > 0]

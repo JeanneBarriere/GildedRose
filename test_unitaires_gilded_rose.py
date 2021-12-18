@@ -17,11 +17,6 @@ class GildedRoseTest(unittest.TestCase):
         item = Backstage(10, 50)
         item.increase_quality()
         self.assertEquals(50, item.quality)
-    
-    def test_decrease_quality_equals_zero(self):
-        item = Backstage(10, 0)
-        item.decrease_quality_equals_zero()
-        self.assertEquals(0, item.quality)
         
     def test_decrease_sell_in_aged_brie_sell_in_positive(self):
         item = AgedBrie(3, 12)
@@ -47,7 +42,11 @@ class GildedRoseTest(unittest.TestCase):
         item = AgedBrie(-1, 12)
         item.increase_quality()
         self.assertEquals(14, item.quality)
-
+        
+    def test_increase_quality_aged_brie_sell_in_negative_max(self):
+        item = AgedBrie(-1, 49)
+        item.increase_quality()
+        self.assertEquals(50, item.quality)
     
 
 

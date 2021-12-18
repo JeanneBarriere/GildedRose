@@ -40,11 +40,7 @@ class Backstage (Item):
 
     def increase_quality(self):
         self.quality = self.quality + 1
-        if self.quality > 50 :
-            self.quality = 50
-
-    def decrease_quality_equals_zero(self):
-        self.quality = 0
+        self.quality = (self.quality,50) [self.quality > 50]
 
     def decrease_sell_in(self):
         self.sell_in = self.sell_in-1
@@ -57,8 +53,8 @@ class Backstage (Item):
         if self.sell_in < 6:
             self.increase_quality()
         self.decrease_sell_in()
-        if self.sell_in < 0:
-            self.decrease_quality_equals_zero()
+        self.quality = ( self.quality, 0) [self.sell_in < 0]
+            
         
         
 class Sulfuras (Item):
@@ -77,9 +73,8 @@ class AgedBrie (Item):
         self.sell_in = self.sell_in-1
 
     def increase_quality(self):
-        if self.quality == 50:
-            return
         self.quality = self.quality + ((1, 2)[self.sell_in < 0])
+        self.quality = (self.quality,50) [self.quality > 50]
 
     def update_quality(self):
         self.decrease_sell_in()
